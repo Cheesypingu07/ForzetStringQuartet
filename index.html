@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forzet String Quartet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add custom CSS styles for enhanced layout and design */
+      
+       
+
+        nav a:hover {
+            background-color: #005aaa;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #063d69;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 50%; /* Decreased the size of the video container */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .description {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        .btn {
+            background-color: #063d69;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #005aaa;
+        }
+
+        footer {
+            background-color: #063d69;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .footer-image {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: auto;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header id="header"> <!-- Added id="header" -->
+        <h1 style="margin-right: 20px;">Forzet String Quartet</h1>
+        <img src="Images/Forzet Logo.jpg" width="200" height="50" alt="Forzet String Quartet Logo" class="header-image">
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="meet-the-musicians.html">Meet the Musicians</a>
+        <a href="song-list.html">Song List</a>
+        <a href="videos.html">Videos</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact-us.html">Contact Us</a>
+    </nav>
+
+    <section id="photo">
+        <h2></h2>
+        <img src="images/quartet_photo.png" alt="Forzet String Quartet" width="900" height="auto">
+        <img src="Images/Forzet_Logo_Full.jpg" alt="Forzet Full Logo" width="700" height="auto">
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Forzet String Quartet is sure to make your special day more memorable! With their talent and affordable prices, these coastal bend musicians are fast becoming a must-have at weddings, business events, banquets, and private parties. Boasting an expansive catalog of over 250 songs, Forzet will work with you to curate a playlist most suited to your event’s needs. The elegance of their string music will surely make your event an unforgettable experience</p>
+        <a href="meet-the-musicians.html" class="btn">Meet the Musicians</a>
+    </section>
+
+    <section id="video">
+        <h2></h2>
+        <div class="video-description">
+            <div class="video-container">
+                <iframe width="460" height="315" src="https://www.youtube.com/embed/8742GU1IOEM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="description">
+                <p></p>
+                <a href="https://www.youtube.com/watch?v=cJtXjtDbksA&list=PLU4udAaiDMEN7fo5n2FzJvzHVy2dB0Bqf" target="_blank" class="btn">Check out our YouTube Channel!</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="playlist">
+        <h2>Forzet Repertoire</h2>
+        <p> The Forzet has prepared many selections for your event. Check out our song list here!</p>
+        <a href="song-list.html" class="btn">Full Repertoire List</a>
+    </section>
+
+    <section id="latest-news">
+        <h2>Latest News</h2>
+        <p>Website Under Construction, Stay Tuned!</p>
+        <img src="Images/under_construction.png" alt="Under Construction Image" width="100" height="100">
+    </section>
+
+    <footer>
+        <p class="footer-text">&copy; 2024 Forzet String Quartet. All rights reserved.</p>
+        <img src="Images/Forzet_Logo_Full.jpg" alt="Footer Image" class="footer-image">
+    </footer>
+</body>
+</html>

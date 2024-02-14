@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - Forzet String Quartet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+
+        
+
+        nav {
+            background-color: #006fc4;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px; /* Increased space between videos */
+            justify-items: center;
+        }
+
+        .video {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Increased space between videos */
+        }
+
+        .video iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+
+        .video p {
+            background-color: #063d69;
+            color: white;
+            margin: 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        h2 {
+            margin-bottom: 20px; /* Add space between the heading and the buttons */
+        }
+
+        .description {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0px;
+        }
+
+        .btn {
+            background-color: #063d69;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #005aaa;
+        }
+
+
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forzet String Quartet</h1>
+        <img src="Images/Forzet Logo.jpg" width="200" height="50" alt="Forzet String Quartet Logo" class="header-image">
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="meet-the-musicians.html">Meet the Musicians</a>
+        <a href="song-list.html">Song List</a>
+        <a href="videos.html">Videos</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact-us.html">Contact Us</a>
+    </nav>
+
+    <section>
+        <h2></h2>
+
+        <div class="videos-container">
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8742GU1IOEM" frameborder="0" allowfullscreen></iframe>
+                <p>Latest Upload</p>
+            </div>
+
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cJtXjtDbksA?si=bn_fZ9cdtVHzTfmT" frameborder="0" allowfullscreen></iframe>
+                <p>Most Popular</p>
+            </div>
+
+
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/U_q3gbfbkUU?si=ugNcfXu2NknILD6-" frameborder="0" allowfullscreen></iframe>
+                <p>Forzet Favorite</p>
+            </div>
+
+
+            <!-- Add more videos as needed -->
+
+        </div>
+
+        
+       
+    </section>
+
+    <section> 
+        <div class="description">
+            <p></p>
+            <a href="https://www.youtube.com/@Forzet.String.Quartet" target="_blank" class="btn">Check out our YouTube Channel!</a>
+        </div>
+    </section>
+
+
+    <footer>
+        <p class="footer-text">&copy; 2024 Forzet String Quartet. All rights reserved.</p>
+        <img src="Images/Forzet_Logo_Full.jpg" alt="Footer Image" class="footer-image">
+    </footer>
+</body>
+</html>

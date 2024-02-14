@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song List - Forzet String Quartet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add custom CSS styles for enhanced layout and design */
+        /* Your CSS styles here */
+        p {
+            /*font-size: 50px; /* Retained font size for the header */
+            margin-bottom: 10px; /* Added margin bottom to create space */
+        }
+        
+        h2 {
+            /*font-size: 50px; /* Retained font size for the header */
+            margin-bottom: 10px; /* Added margin bottom to create space */
+        }
+
+        label {
+            /*font-size: 50px; /* Retained font size for the header */
+            margin-bottom: 10px; /* Added margin bottom to create space */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Forzet String Quartet</h1>
+        <img src="Images/Forzet Logo.jpg" width="200" height="50" alt="Forzet String Quartet Logo" class="header-image">
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="meet-the-musicians.html">Meet the Musicians</a>
+        <a href="song-list.html">Song List</a>
+        <a href="videos.html">Videos</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact-us.html">Contact Us</a>
+    </nav>
+
+    <section>
+        <h2>Song List</h2>
+        <p><strong></strong> The Forzet string quartet offers over 250 musical selections in a variety of genres, so no matter the occasion, we will have a suitable song list. With enough notice, we may even be able to accept requests for songs that are not on our list for a small fee. You may choose from any song listed below for your event. Feel free to contact us if you have any questions about our repertoire!</p>
+        
+        <form>
+            <label for="genre">Select Genre:</label>
+            <select id="genre" name="genre" onchange="changeGenre()">
+                <option value="null">-- Select Genre --</option> <!-- Blank option -->
+                <option value="classical">Classical</option>
+                <option value="pop-rock-jazz">Pop/Rock/Jazz</option>
+                <option value="soundtracks">Soundtracks</option>
+                <option value="international">International</option>
+                <option value="religious">Religious</option>
+            </select>
+        </form>
+
+        <div id="subgenre-dropdown" style="display:none;">
+            <label for="sub-genre">Select Subcategory:</label>
+            <select id="sub-genre" name="sub-genre" onchange="changeSubGenre()">
+                <option value="">-- Select Subcategory --</option>
+            </select>
+        </div>
+
+        <div id="song-list">
+            <!-- Song list will be populated dynamically based on selected genre and subcategory -->
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">&copy; 2024 Forzet String Quartet. All rights reserved.</p>
+        <img src="Images/Forzet_Logo_Full.jpg" alt="Footer Image" class="footer-image">
+    </footer>
+
+    <script>
+        function changeGenre() {
+            var genre = document.getElementById("genre").value;
+            var subgenreDropdown = document.getElementById("subgenre-dropdown");
+
+            // Hide the subcategory dropdown by default
+            subgenreDropdown.style.display = "none";
+
+            // Check if the selected genre has subcategories
+            if (genre === "null" || "classical" || genre === "pop-rock-jazz" || genre === "soundtracks" || genre === "international" || genre === "religious") {
+                // Show the subcategory dropdown for genres with subcategories
+                subgenreDropdown.style.display = "block";
+                var subGenreSelect = document.getElementById("sub-genre");
+
+                // Clear existing options
+                subGenreSelect.innerHTML = "";
+
+                // Add options based on the selected genre
+                if (genre === "classical") {
+                    var classicalOptions = [
+                        { value: "null", text: "-- Select Subcategory --" },
+                        { value: "renaissance", text: "Renaissance era (1400-1600)" },
+                        { value: "baroque", text: "Baroque era (1600-1750)" },
+                        { value: "classical-era", text: "Classical era (1750-1820)" },
+                        { value: "romantic-era", text: "Romantic era (1820-1900)" },
+                        { value: "contemporary-era", text: "Contemporary Era (1900-present)" }
+                    ];
+                    addOptions(subGenreSelect, classicalOptions);
+
+                } else if (genre === "pop-rock-jazz") {
+                    var popRockJazzOptions = [
+                        {value: "null", text: "-- Select Subcategory --" },
+                        { value: "pop-rock-jazz", text: "Pop/Rock/Jazz" }
+                        // Add more options for this genre if needed
+                    ];
+                    addOptions(subGenreSelect, popRockJazzOptions);
+
+                } else if (genre === "soundtracks") {
+                    var soundTracksOptions = [
+                        
+                        { value: "null", text: "-- Select Subcategory --" },
+                        { value: "Film&TV", text: "Film & TV" },
+                        { value: "videogames", text: "Video Games" },
+                        { value: "theatre", text: "Theatre" },
+                        // Add more options for this genre if needed
+                    ];
+                    addOptions(subGenreSelect, soundTracksOptions);
+
+                } else if (genre === "international") {
+                    var internationalOptions = [
+                        { value: "null", text: "-- Select Subcategory --" },
+                        { value: "patrioticAmerican", text: "Patriotic American" },
+                        { value: "worldMusic", text: "World Music" },
+                        
+                        // Add more options for this genre if needed
+                    ];
+                    addOptions(subGenreSelect, internationalOptions);
+
+                }  else if (genre === "religious") {
+                    var religiousOptions = [
+                        
+                        { value: "null", text: "-- Select Subcategory --" },
+                        { value: "christian", text: "Christian" },
+                        { value: "jewish", text: "Jewish" },
+                        { value: "christmas", text: "Christmas" },
+                        // Add more options for this genre if needed
+                    ];
+                    addOptions(subGenreSelect, religiousOptions);
+
+                }    else if (genre === "null") {
+                    var religiousOptions = [
+                        
+                        { value: "null", text: "-- Select Subcategory --" },
+                        
+
+                        // Add more options for this genre if needed
+                    ];
+                    addOptions(subGenreSelect, religiousOptions);
+                }
+                
+            } else {
+                // Clear the subcategory dropdown if the selected genre does not have subcategories
+                subGenreSelect.innerHTML = "";
+            }
+
+            // Clear the song list when changing the genre
+            var songListDiv = document.getElementById("song-list");
+            songListDiv.innerHTML = "";
+        }
+
+
+
+
+
+
+
+        function changeSubGenre() {
+            var subGenre = document.getElementById("sub-genre").value;
+            var songListDiv = document.getElementById("song-list");
+            var songList = "";
+
+            var songs = [];
+
+            // Reset song list when changing the subcategory
+            songListDiv.innerHTML = "";
+
+            switch (subGenre) {
+                case "renaissance":
+                    songs = [
+                        "",
+                        "Fair Phyllis I Saw - John Farmer",
+                        "Flow My Tears - John Dowland"
+                    ];
+                    break;
+                case "baroque":
+                    songs = [
+                            "",
+                            "Adagio - Tomaso Albinoni",
+                            "Air on the G String - Johann Sebastian Bach",
+                            "Arioso - Johann Sebastian Bach",
+                            "Arrival of the Queen of Sheba - George Frideric Handel",
+                            "Autumn from ‘The Four Seasons’ (one movement) - Antonio Vivaldi",
+                            "Badinerie from ‘Suite for Orchestra no. 2’ - Johann Sebastian Bach",
+                            "Brandenburg Concerto No. 3 - Johann Sebastian Bach",
+                            "Brandenburg Concerto No. 5 - Johann Sebastian Bach",
+                            "Canon in D - Johann Pachelbel",
+                            "Contrapunctus I from ‘The Art of Fugue’ - Johann Sebastian Bach",
+                            "Jesu, Joy of Man's Desiring - Johann Sebastian Bach",
+                            "La Réjouissance - George Frideric Handel",
+                            "Largo from Concerto for Two Violins - Johann Sebastian Bach",
+                            "Largo from Xerxes - George Frederic Handel",
+                            "Rondeau from ‘Suite de Symphonies’  - Jean-Joseph Mouret",
+                            "Spring from The Four Seasons - Antonio Vivaldi",
+                            "Trumpet Tune - Henry Purcell",
+                            "Trumpet Voluntary - Jeremiah Clarke",
+                            "Wachet Auf - Johann Sebastian Bach",
+                            "Water Music - George Frideric Handel (Two Movements)",
+                            "Winter from ‘The Four Seasons’ - Antonio Vivaldi (One Movement)",
+                    ];
+                     break;
+
+                case "classical-era":
+                    songs = [
+                            "",
+                            "Allegro from ‘Divertimento in D’ - Wolfgang Amadeus Mozart",
+                            "Eine Kleine Nachtmusik - Wolfgang Amadeus Mozart (4 Movements)",
+                            "Lacrimosa dies illa from Requiem Mass K.626 - Wolfgang Amadeus Mozart",
+                            "Minuet - Luigi Boccherini",
+                            "Serenade - Frank Schubert",
+                            "Sheep May Safely Graze - Johann Sebastian Bach",
+                            "String Quartet No. 1 in F Major: 1. Allegro con Brio - Ludwig van Beethoven",
+                            "String Quartet No. 2 in E-Flat Major 'The Joke': 4. Finale  - Joseph Haydn",
+                            "Symphony No. 40 in G Minor - Wolfgang Amadeus Mozart",
+                            "Turkish March - Wolfgang Amadeus Mozart",
+                            "Twinkle Twinkle Little Star - Wolfgang Amadeus Mozart",
+                            "Wedding March from ‘The Marriage of Figaro’ - Wolfgang Amadeus Mozart"
+                    ];
+                    break;
+
+                case "romantic-era":
+                    songs = [
+                            "",
+                            "Andante Festivo - Jean Sibelius",
+                            "Bridal Chorus (Here Comes the Bride) - Richard Wagner",
+                            "Danse Macabre - Camille Saint-Saëns",
+                            "Entry of the Gladiators - Julius Fučík",
+                            "Flower Duet from ‘Lakmé’ - Léo Delibes",
+                            "Gymnopedie - Eric Satie",
+                            "Humoresque No. 7 - Antonín Dvořák",
+                            "Hungarian Dance No. 5 - Johannes Brahms",
+                            "In the Steppes of Central Asia - Alexander Borodin",
+                            "Largo from the “New World Symphony” - Antonín Dvořák",
+                            "Meditation from ‘Thaïs’ - Jules Massenet",
+                            "Morning Mood from ‘Peer Gynt’ - Edvard Grieg",
+                            "Nessun Dorma from ‘Turandot’ - Giacomo Puccini",
+                            "Nimrod from ‘Enigma Variations’ - Edward Elgar",
+                            "Ode to Joy from ‘Symphony No.9’ - Ludwig van Beethoven",
+                            "O Mío Babbino Caro - Giacomo Puccini",
+                            "Overture to William Tell - Gioachino Rossini",
+                            "Pavane - Gabriel Fauré",
+                            "Romance - Dmitri Shostakovich",
+                            "Scene Finale from ‘Swan Lake’ - Pyotr Illyich Tchaikovsky",
+                            "Slavonic Dance No. 8 - Antonín Dvořák",
+                            "Songs My Mother Taught Me - Antonín Dvořák",
+                            "String Quartet No. 1 in E Minor 'From My Life': 1. Allegro - Bedřich Smetana",
+                            "String Quartet No. 12 in F Major 'American': 1. Allegro ma non troppo - Antonín Dvořák",
+                            "String Quartet No. 2 in D Major - Alexander Borodin (2 Movements) ",
+                            "Waltz in A-Flat Major - Johannes Brahms",
+                            "Wedding March - Felix Mendelssohn"
+                    ];
+                    break;
+
+                case "contemporary-era":
+                    songs = [
+                        "",
+                        "Bolero - Maurice Ravel",
+                        "Clair de Lune - Claude Debussy",
+                        "Czardas - Vincenzo Monti",
+                        "Fiddle Fury - Katherine Griesinger",
+                        "Palladio - Karl Jenkins",
+                        "Perseus - Soon Hee Newbold",
+                        "Por Una Cabeza - Carlos Gardel",
+                        "St. Paul’s Suite - Gustav Holst",
+                        "The Swan from ‘Carnival of the Animals’ - Camille Saint-Saëns",
+                        "Thaxted from ‘Jupiter’ from ‘The Planets’ - Gustav Holst"
+                    ];
+                    break;
+
+                case "pop-rock-jazz":
+                        songs = [
+                            "",
+                            "A Thousand Years - Christina Perri",
+                            "All of Me - John Legend",
+                            "As It Was - Harry Styles",
+                            "Bad Guy - Billie Eilish",
+                            "Bittersweet Symphony - The Verve",
+                            "Bohemian Rhapsody - Queen",
+                            "Can't Help Falling In Love - Elvis Presley",
+                            "Cien Años - Pedro Infante",
+                            "Dance the Night - Dua Lipa",
+                            "Enchanted - Taylor Swift",
+                            "Enter Sandman - Metallica",
+                            "Fade to Black - Metallica",
+                            "Fly Me To The Moon - Frank Sinatra",
+                            "Girls Like You - Maroon 5",
+                            "Hallelujah - Leonard Cohen",
+                            "Havana - Camila Cabello",
+                            "Here Comes the Sun - The Beatles",
+                            "In My Blood - Shawn Mendes",
+                            "Levitating - Dua Lipa",
+                            "Lover - Taylor Swift",
+                            "Love Story - Taylor Swift",
+                            "Mr. Blue Sky - Electric Light Orchestra",
+                            "Perfect - Ed Sheeran",
+                            "Sabor A Mi - Álvaro Carrillo",
+                            "Señorita - Camila Cabello",
+                            "Shut Down - BLACKPINK",
+                            "Somewhere Over the Rainbow - Israel Kamakawiwoʻole",
+                            "Stairway to Heaven - Led Zeppelin",
+                            "Take on Me - A-Ha",
+                            "The Blessing - Kari Jobe",
+                            "The Entertainer - Scott Joplin",
+                            "Valentine - Laufey",
+                            "Viva La Vida - Coldplay",
+                            "Y.M.C.A - Village People",
+                            "Yesterday - The Beatles"
+                    ];
+                    break;
+
+                case "Film&TV":
+                    songs = [
+                        "",
+                        "Ashokan Farewell from ‘The Civil War’ - Jay Ungar",
+                        "Beauty and the Beast - Alan Menken",
+                        "Cantina Band from ‘Star Wars’ - John Williams",
+                        "Can You Feel the Love Tonight from ‘The Lion King’ - Elton John",
+                        "Dance the Night from ‘Barbie’ - Dua Lipa",
+                        "Interstellar Main theme from ‘Interstellar’ - Hans Zimmer",
+                        "Kingdom Dance from ‘Tangled’ - Alan Menken",
+                        "Married Life from ‘Up’ - Michael Giacchino",
+                        "<u> Marvel Comics Medley - Various Composers: </u>",
+                        "---Porch from ‘Avengers: Infinity War’ - Alan Silvestri",
+                        "---Spider-Man: Homecoming Suite - Michael Giacchino",
+                        "---Driving with the Top Down/Iron Man 3 Theme - Ramin Djwani/Bryan Tyler",
+                        "---Theme Song from ‘X-Men The Animated Series’ - Ron Wasserman",
+                        "---Black Tears from ‘Guardians of the Galaxy’ - Tyler Bates",
+                        "---Themes from ‘Doctor Strange’ - Michael Giacchino",
+                        "---Theme from ‘Captain America: The First Avenger’ - Alan Silvestri",
+                        "---Portals from ‘Avengers: Endgame’ - Alan Silvestri",
+                        "---Theme from ‘Avengers’ - Alan Silvestri",
+                        "Merry-Go-Round of Life from ‘Howl’s Moving Castle’ - Joe Hisaishi",
+                        "<u> Music from La La Land - Justin Hurtwitz </u>",
+                        "---Another Day of Sun",
+                        "---City of Stars",
+                        "---Mia and Sebastian’s Theme",
+                        "---Audition (The Fools Who Dream)",
+                        "Oogway Ascends from ‘Kung Fu Panda’ - Hans Zimmer",
+                        "Over the Rainbow from ‘The Wizard of Oz’ - Harold Arlen",
+                        "Pirates of the Caribbean - Hans Zimmer & Klaus Badelt",
+                        "Shallow from ‘A Star is Born’ - Lady Gaga and Bradley Cooper",
+                        "So This Is Love (Cinderella’s Waltz) from ‘Cinderella’ - Mack David, Al Hoffman, Jerry Livingston",
+                        "Test Drive from ‘How to Train Your Dragon’ - John Powell",
+                        "The Prayer from ‘Quest for Camelot’ - David Foster & Carole Bayer Sager",
+                        "We Don’t Talk About Bruno from ‘Encanto’ - Lin-Manuel Miranda",
+                        "Wildest Dreams from ‘Bridgerton’ - Taylor Swift"
+
+
+                    ];
+                    break;
+                case "videogames":
+                    songs = [
+                        "",
+                        "Gourmet Race from ‘Kirby Super Star’ - Jun Ishikawa",
+                        "Gusty Garden Galaxy from ‘Super Mario Galaxy’ - Mahito Yokota & Koji Kondo",
+                        "Megalovania from ‘Undertale’ - Toby Fox",
+                        "Mii Channel - Koji Kondo",
+                        "Sweden from Minecraft - C418",
+                        "The Legend - Deltarune from ‘Deltarune’ - Toby Fox"
+                    ];
+                    break;      
+                case "theatre":
+                    songs = [
+                        "",
+                        "America from ‘West Side Story’ - Leonard Bernstein",
+                        "Edelweiss from ‘The Sound of Music’ - Rodgers and Hammerstein",
+                        "If I Were A Rich Man from ‘Fiddler on the Roof’ - Jerry Bock",
+                        "My Favorite Things from ‘The Sound of Music’ - Rodgers and Hammerstein"
+                    ];
+                    break; 
+                case "patrioticAmerican":
+                    songs = [
+                        "",
+                        "Happy Birthday",
+                        "Lift Every Voice and Sing - James Weldon Johnson",
+                        "My Country Tis of Thee",
+                        "Simple Gifts",
+                        "<u>Service Salute Medley </u>",
+                        "---Anchors Aweigh",
+                        "---The Caissons Go Rolling Along",
+                        "---The Wild Blue Yonder",
+                        "---The Marines Hymn",
+                        "Star Spangled Banner (US National Anthem)"
+                    ];
+                    break;
+                case "worldMusic":
+                    songs = [
+                        "",
+                        "Advance Australia Fair (Australian National Anthem)",
+                        "Amhran na bhFiann (Irish National Anthem)",
+                        "Cumbia y Congo - William Grant Still**",
+                        "Danny Boy",
+                        "Drunken Sailor",
+                        "El Choclo",
+                        "España Cañí - Pascual Marquina Narro*",
+                        "God Save The King (UK National Anthem)",
+                        "<u> Irish Jig Medley: </u>",
+                        "---The Irish Washerwoman",
+                        "---Jig",
+                        "---The Blackthorn Stick",
+                        "I Vow to Thee, My Country - Gustav Holst",
+                        "<u> Jamaica Folk (Medley) - Peter Ashbourne: </u>",
+                        "---Long Time Gal",
+                        "---Linstead Market",
+                        "---Jane and Louisa",
+                        "---Fan Me Solja Man",
+                        "---Mango Walk",
+                        "La Bamba",
+                        "La Cucaracha",
+                        "Land of Hope and Glory from Pomp and Circumstance March No. 1 - Edward Elgar",
+                        "La Paloma Tango - Sebastian Iradier",
+                        "O Canada! (Canadian National Anthem) - Calixa Lavallée",
+                        "Sakura",
+                        "Soon May The Wellerman Come",
+                        "Still, Still, Still",
+                        "Tango Ballet - Astor Piazzolla",
+                        "Tarantella Napoletana",
+                        "Water is Wide"
+                    ];
+                    break;
+                case "christian":
+                    songs = [
+                        "",
+                        "Abide With Me - W.H. Monk",
+                        "All to Jesus I Surrender - Winfield S. Weeden",
+                        "Amazing Grace",
+                        "A Mighty Fortress is Our God - Martin Luther",
+                        "Ave Maria - Franz Schubert**",
+                        "Be Still, My Soul (Finlandia) - Jean Sibelius",
+                        "Be Thou My Vision",
+                        "Blessed Assurance",
+                        "Come, Thou Fount of Every Blessing",
+                        "Fairest Lord Jesus",
+                        "Glorious Things of Thee Are Spoken",
+                        "Guide me, O thou great Redeemer (Bread of Heaven) (Cwm Rhondda) - John Hughes",
+                        "His Eye Is on the Sparrow - Charles H. Gabriel",
+                        "Holy, Holy, Holy (Nicaea)",
+                        "How Firm a Foundation",
+                        "I Need Thee Every Hour - Robert Lowry",
+                        "It is Well with My Soul - Phillip P. Bliss",
+                        "Jesu, Joy of Man's Desiring - Johann Sebastian Bach**",
+                        "Jesus Christ is Risen Today (Easter Hymn)",
+                        "Joyful, Joyful, We Adore Thee",
+                        "Like a River Glorious - James Mountain",
+                        "Lo, How a Rose E'er Blooming",
+                        "Nearer My God to Thee",
+                        "Nothing But the Blood of Jesus - Rev. Robert Lowry",
+                        "O Happy Day",
+                        "O Sacred Head, Now Wounded - Hans L. Hassler",
+                        "Panis Angelicus - César Franck",
+                        "Praise Ye the Lord of Hosts",
+                        "Rejoice in the Lord Alway",
+                        "Ring the Bells",
+                        "Sheep May Safely Graze - Johann Sebastian Bach",
+                        "Sing Hosanna (Give Me Joy in My Heart)",
+                        "The Holy City - Stephen Adams",
+                        "The Lord's My Shepherd - Jessie Seymour Irvine",
+                        "Thine be the glory Maccabaeus - George Frideric Handel",
+                        "To God Be the Glory - Wlliam Howard Doane",
+                        "Wachet Auf - Johann Sebastian Bach",
+                        "What a Friend We Have in Jesus - Charles C. Converse",
+                        "Wondrous Love"
+                    ];
+                    break;
+
+                case "jewish":
+                    songs = [
+                        "",
+                        "Abi Gezunt",
+                        "Freylekh Zain",
+                        "Hatikvah (National Anthem of Israel)",
+                        "Hava Nagila",
+                        "Hine Ma Tov",
+                        "I Have a Little Dreidel",
+                        "Ose Shalom",
+                        "Unser Toirele"
+                    ];
+                    break;
+
+
+                case "christmas":
+                    songs = [
+                        "",
+                        "Angels From the Realms of Glory",
+                        "Angels We Have Heard on High",
+                        "Away in a Manger",
+                        "Carol of the Bells",
+                        "Carol of the Birds",
+                        "Carol of the Drum",
+                        "Christmas Angels",
+                        "Christmas Concerto - Arcangelo Corelli",
+                        "Coventry Carol",
+                        "Dance of the Sugar Plum Fairies from The Nutcracker - Peter Illyich Tchaikovsky",
+                        "Deck the Halls",
+                        "Ding Dong Merrily on High",
+                        "Feliz Navidad - José Feliciano",
+                        "Go Tell It on the Mountain",
+                        "God Rest Ye Merry Gentlemen",
+                        "Good King Wenceslas",
+                        "Hallelujah from Messiah - George Frederic Handel",
+                        "Hark! The Herald Angels Sing",
+                        "I Heard the Bells on Christmas Day",
+                        "I Saw Three Ships",
+                        "It Came Upon the Midnight Clear",
+                        "Jingle Bells",
+                        "Joy to the World",
+                        "Let it Snow, Let it Snow, Let it Snow - Dean Martin",
+                        "O Christmas Tree",
+                        "O Come, All Ye Faithful",
+                        "O Come, Little Children",
+                        "O Come, O Come Emmanuel",
+                        "O Holy Night",
+                        "O Little Town of Bethlehem",
+                        "Once in Royal David's City",
+                        "Pat a Pan",
+                        "Silent Night",
+                        "Sussex Carol",
+                        "The First Noel",
+                        "The Friendly Beasts",
+                        "The Holly and the Ivy",
+                        "The Huron Carol",
+                        "The Snow Lay on the Ground",
+                        "The Three Kings of Orient Are",
+                        "The Twelve Days of Christmas",
+                        "Together We Feast at Last*",
+                        "We Gather Together to Ask the Lord's Blessing",
+                        "We Wish You a Merry Christmas",
+                        "Wexford Carol",
+                        "What Child is This"
+                    ];
+                    break;
+
+               
+                default:
+                    songs = [];
+            }
+
+            for (var i = 0; i < songs.length; i++) {
+                songList += "<p>" + songs[i] + "</p>";
+            }
+
+            songListDiv.innerHTML = songList;
+        }
+
+        function addOptions(select, options) {
+            for (var i = 0; i < options.length; i++) {
+                var option = document.createElement("option");
+                option.value = options[i].value;
+                option.textContent = options[i].text;
+                select.appendChild(option);
+            }
+        }
+    </script>
+</body>
+</html>

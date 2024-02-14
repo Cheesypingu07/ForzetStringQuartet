@@ -1,0 +1,121 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, sans-serif; /* Changed font family to Calibri */
+    font-size: 18px; /* Added universal font size */
+}
+
+/* Body styles */
+body {
+    background-color: #f5f5f5; /* Changed background color to a light gray */
+}
+
+/* Universal header styles */
+header {
+    background-color: #063d69;
+    color: white;
+    padding: 30px 0; /* Retained padding for the header */
+    text-align: center;
+    position: relative; /* Add relative positioning to allow absolute positioning of the image */
+}
+
+h1 {
+    font-size: 50px; /* Retained font size for the header */
+    margin-bottom: 10px; /* Added margin bottom to create space */
+}
+
+.subheader {
+    font-size: 24px; /* Added font size for the subheader */
+    margin-bottom: 20px; /* Added margin bottom to create space */
+}
+
+.header-image {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    width: 90px; /* Adjust as needed */
+    height: auto;
+    border-radius: 20px;
+}
+
+/* Universal navigation styles */
+nav {
+    background-color: #006fc4;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px; /* Added universal font size for navigation */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+nav a:hover {
+    background-color: #005aaa;
+    }
+
+/* Section styles */
+section {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Added border radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+}
+
+/* Welcome section styles */
+#welcome {
+    background-image: url('Images/quartet_photo.png'); /* Replace 'background.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    border-radius: 10px; /* Added border radius for rounded corners */
+}
+
+
+
+/* Musician details styles */
+.musician {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Added border radius for rounded corners */
+}
+
+.musician img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Universal footer styles */
+footer {
+    background-color: #063d69;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Ensure the footer is positioned relative to its containing block */
+}
+
+.footer-image {
+    position: absolute; /* Position the image absolutely within the footer */
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 50%; /* Position the image horizontally in the center */
+    transform: translateX(-50%); /* Adjust to center the image horizontally */
+    width: 100px; /* Adjust the width of the image */
+    height: auto; /* Maintain the aspect ratio */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add a subtle shadow to the image */
+}
+
+.footer-text {
+    margin-bottom: 30px; /* Add space below the text */
+}
+
+
+
