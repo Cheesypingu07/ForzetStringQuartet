@@ -58,6 +58,19 @@ nav a:hover {
     background-color: #005aaa;
     }
 
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    nav {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+
+    nav a {
+        padding: 8px; /* Adjust padding for smaller screens */
+        margin: 0 3px; /* Adjust margin for smaller screens */
+    }
+}
+
+
 /* Section styles */
 section {
     padding: 20px;
