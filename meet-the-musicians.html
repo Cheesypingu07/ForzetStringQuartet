@@ -2,33 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meet the Musicians - Forzet String Quartet</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="Images/Forzet Logo.jpg">
+
     <style>
         body {
-            font-size: 10px;
+            font-size: 14px; /* Decreased font size for better readability */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
+
+        .container {
+            max-width: 1200px; /* Set a maximum width for the content */
+            margin: 0 auto; /* Center the content horizontally */
+            text-align: center;
+        }
+
         .musician {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Add margin at the bottom of each musician section */
+            overflow: hidden; /* Clear floats */
         }
+
         .musician img {
-            width: 200px;
+            float: left; /* Float the image to the left */
+            margin-right: 20px; /* Add space between image and text */
+            width: 20%; /* Changed width to a percentage */
+            max-width: 200px; /* Set a maximum width to prevent images from becoming too large */
             height: auto;
-            margin-right: 20px;
+            margin-bottom: 20px; /* Add margin at the bottom of the image */
         }
+
         .musician-content {
-            flex: 1;
+            overflow: hidden; /* Clear floats */
+            width: 70%; /* Adjusted width for the content */
+            float: left; /* Float the content to the left */
         }
+
+        .musician-content h3 {
+            margin-top: 0; /* Remove default margin */
+            margin-bottom: 10px; /* Add margin at the bottom */
+            font-size: 24px; /* Adjusted font size for better appearance */
+        }
+
+        .musician h2 {
+            margin-top: 0; /* Remove default margin */
+            margin-bottom: 20px; /* Add margin at the bottom */
+            font-size: 24px; /* Adjusted font size for better appearance */
+            text-decoration: underline;
+
+        }
+
+        .musician-content p {
+            text-align: justify; /* Justify text for better appearance */
+            font-size: 18px; /* Adjusted font size for better appearance */
+        }
+
+        @media (max-width: 768px) {
+            .musician img {
+                float: none; /* Remove float on smaller screens */
+                margin: 0 auto 20px; /* Center the image and add margin at the bottom */
+                display: block; /* Ensure image takes full width on smaller screens */
+                width: 30%; /* Adjust width for smaller screens */
+                max-width: none; /* Remove max-width on smaller screens */
+            }
+            .musician-content {
+                width: 100%; /* Adjusted width for the content on smaller screens */
+            }
+            .musician-content h3 {
+                font-size: 20px; /* Adjusted font size for smaller screens */
+            }
+            .musician-content p {
+                font-size: 16px; /* Adjusted font size for smaller screens */
+            }
+        }
+
+        /* Navigation styles remain unchanged */
         .navigation {
             margin-top: 30px;
             margin-bottom: 30px;
             text-align: center;
         }
+
         nav a:hover {
-        background-color: #005aaa;
+            background-color: #005aaa;
         }
 
         .navigation a {
@@ -45,6 +104,7 @@
             cursor: pointer;
             display: inline-block; /* Ensure buttons stay inline */
         }
+
         .navigation a:hover {
             background-color: #006fc4;
         }
@@ -52,66 +112,88 @@
 </head>
 <body>
     <header id="header"> <!-- Added id="header" -->
-        <h1 style="margin-right: 20px;">Forzet String Quartet</h1>
-        <img src="Images/Forzet Logo.jpg" width="200" height="50" alt="Forzet String Quartet Logo" class="header-image">
+        <div class="container">
+            <h1 style="margin-right: 20px;">Forzet String Quartet</h1>
+        </div>
     </header>
     
-
     <nav>
-        <a href="index.html">Home</a>
-        <a href="meet-the-musicians.html">Meet the Musicians</a>
-        <a href="song-list.html">Song List</a>
-        <a href="videos.html">Videos</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact-us.html">Contact Us</a>
+        <!-- Navigation remains unchanged -->
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="meet-the-musicians.html">Meet the Musicians</a>
+            <a href="song-list.html">Song List</a>
+            <a href="videos.html">Videos</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact-us.html">Contact Us</a>
+        </div>
     </nav>
 
+    
+
     <section>
-        <h2>Meet the Musicians</h2>
-
-        <div class="musician">
-            <img src="Images/Julius Cropped.png" alt="Julius Gonzalez">
-            <div class="musician-content">
-                <h3>Julius Gonzalez</h3>
-                <p>A native of San Antonio, Texas, Julius began his musical journey almost from birth. He took guitar and drum lessons offered at a local music store while in elementary school, before finally finding the violin in fifth grade at the age of 10. Though he did not have any private lessons, he was still able to achieve much in his high school years, including placing in the TMEA All-Region orchestra for three consecutive years, and earning scholarships to the Mark Wood Rock Orchestra Camp (a camp hosted by the original string master for the Trans-Siberian Orchestra Mark Wood). In 2019 at just seventeen years old, Julius succeeded in earning a spot in the Lichtenstein String Quartet, and was awarded a full-ride scholarship to Texas A&M University - Corpus Christi, where he studied for four years under the direction of Dr. Carrie Pierce and Dr. Jose Flores. Julius has performed with several professional groups in South Texas, including Corpus Christi’s own Mariachi Mexicanissimo, the nationally recognized Stringphonics String Quartet, and the Corpus Christi, Victoria, and Kingsville Symphony Orchestras. In 2022, he teamed up with his close friends and former Lichtenstein string quartet members Jonathon Conyers, Giovanni Zapata, and Betsabé Torres to found the Forzet string quartet with the goal of providing high quality music to the coastal bend. He will graduate in the spring of 2024 with his Bachelors Degree of Arts in Music with a K-12 Teacher Certification.</p>
+        <div class="container"> <!-- Added container to each section -->
+            <div class="musician">
+                    <h2 style="font-size: 40px;">Meet the Musicians!</h2> <!-- Adjusted font size for the header -->
+                <img src="Images/Julius Cropped.png" alt="Julius Gonzalez">
+                <div class="musician-content">
+                    <h3>Julius Gonzalez</h3>
+                    <p>A native of San Antonio, Texas, Julius began his musical journey almost from birth. He took guitar and drum lessons offered at a local music store while in elementary school, before finally finding the violin in fifth grade at the age of 10. Though he did not have any private lessons, he was still able to achieve much in his high school years, including placing in the TMEA All-Region orchestra for three consecutive years, and earning scholarships to the Mark Wood Rock Orchestra Camp (a camp hosted by the original string master for the Trans-Siberian Orchestra Mark Wood). In 2019 at just seventeen years old, Julius succeeded in earning a spot in the Lichtenstein String Quartet, and was awarded a full-ride scholarship to Texas A&M University - Corpus Christi, where he studied for four years under the direction of Dr. Carrie Pierce and Dr. Jose Flores. Julius has performed with several professional groups in South Texas, including Corpus Christi’s own Mariachi Mexicanissimo, the nationally recognized Stringphonics String Quartet, and the Corpus Christi, Victoria, and Kingsville Symphony Orchestras. In 2022, he teamed up with his close friends and former Lichtenstein string quartet members Jonathon Conyers, Giovanni Zapata, and Betsabé Torres to found the Forzet string quartet with the goal of providing high quality music to the coastal bend. He will graduate in the spring of 2024 with his Bachelors Degree of Arts in Music with a K-12 Teacher Certification.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="musician">
-            <img src="Images/Jonathon Cropped.png" alt="Jonathon Conyers">
-            <div class="musician-content">
-                <h3>Jonathon Conyers</h3>
-                <p>Violinist Jonathon Conyers was born and raised in Corpus Christi, Texas, and is currently completing his bachelor of music at Texas A&M University-Corpus Christi. The first time he picked up an instrument was in his middle school orchestra class in the 6th grade, and ever since then, he has become hooked on performing on the violin. Under the guidance of Allegra Rice-Morton and Dr. Jose Flores, Jonathon accomplished a great deal in high school, such as being a part of the region orchestra three times and playing in the Honors Performance Series orchestra at Carnegie Hall. He was also a member of the internationally renowned Dalí String Quartet camp in the summer before his junior year. Following these achievements, Jonathon began sharing his passion for music through teaching. As a teacher at Musicians Academy, he teaches beginner string students in the Corpus Christi area, intending to instill a love for music. This role allows him to give back to the community, enriching his understanding and approach to music. While prepping for college auditions, Dr. Flores guided Jonathon and encouraged him to audition for TAMUCC's scholarship ensemble, the Lichtenstein String Quartet. With the help of Dr. Flores, he was accepted into the quartet. Going into his first semester of college, it was here where he met and became close friends with Giovanni, Julius, and Betsabe. As a quartet at TAMUCC, they had the wonderful opportunity to have Dr. Carrie Pierce coach them and aid their musical expression. She gave them information on musicality and quartet playing that is worth its weight in gold. Although most of the group has moved on from their time as members of the Lichtenstein String Quartet, they had no intention of stopping performing together. Together, they founded the Forzet String Quartet to continue doing what they love: performing music together for their beloved community.</p>
+    <section>
+        <div class="container"> <!-- Added container to each section -->
+            <div class="musician">
+                <img src="Images/Jonathon Cropped.png" alt="Jonathon Conyers">
+                <div class="musician-content">
+                    <h3>Jonathon Conyers</h3>
+                    <p>Violinist Jonathon Conyers was born and raised in Corpus Christi, Texas, and is currently completing his bachelor of music at Texas A&M University-Corpus Christi. The first time he picked up an instrument was in his middle school orchestra class in the 6th grade, and ever since then, he has become hooked on performing on the violin. Under the guidance of Allegra Rice-Morton and Dr. Jose Flores, Jonathon accomplished a great deal in high school, such as being a part of the region orchestra three times and playing in the Honors Performance Series orchestra at Carnegie Hall. He was also a member of the internationally renowned Dalí String Quartet camp in the summer before his junior year. Following these achievements, Jonathon began sharing his passion for music through teaching. As a teacher at Musicians Academy, he teaches beginner string students in the Corpus Christi area, intending to instill a love for music. This role allows him to give back to the community, enriching his understanding and approach to music. While prepping for college auditions, Dr. Flores guided Jonathon and encouraged him to audition for TAMUCC's scholarship ensemble, the Lichtenstein String Quartet. With the help of Dr. Flores, he was accepted into the quartet. Going into his first semester of college, it was here where he met and became close friends with Giovanni, Julius, and Betsabe. As a quartet at TAMUCC, they had the wonderful opportunity to have Dr. Carrie Pierce coach them and aid their musical expression. She gave them information on musicality and quartet playing that is worth its weight in gold. Although most of the group has moved on from their time as members of the Lichtenstein String Quartet, they had no intention of stopping performing together. Together, they founded the Forzet String Quartet to continue doing what they love: performing music together for their beloved community.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="musician">
-            <img src="Images/Betsabe Cropped.png" alt="Betsabé Torres" width="400" height="250">
-            <div class="musician-content">
-                <h3>Betsabé Torres</h3>
-                <p>Cuban-American immigrant Betsabé Torres began her musical journey as a young child serving in the music ministry “Unanimes” at La Trinidad Christian Church in Corpus Christi, Texas, where her father pastored. In middle school, she jumped at the opportunity to take orchestra class to make her grandfather’s dream come true, as he wanted one of his grandchildren to be a violinist. Lacking the financial resources to take private lessons, she was greatly disadvantaged compared to other young violinists in the region. Violin professor Dr. Jose Flores was instrumental in changing Torres’s outcome.  Dr. Flores taught Torres privately for several years and showed her a path to pursue music as a career. During her senior year of high school, Dr. Flores guided her through transitioning to viola to audition for the open spot in the Lichtenstein String Quartet at Texas A&M University-Corpus Christi. At TAMUCC, Torres studied viola under fabulous violist Dr. Melissa Melendez and worked in the Lichtenstein Quartet with coaching from cello professor Dr. Carrie Pierce. While in college, Torres worked with young children as a music teacher at the Blanche Moore Early Childhood Development Center and as a daycare teacher at the Little Sprouts Mother’s Day Out. Teaching young children is where Torres found her passion. Torres will be graduating in the spring of 2024 with her Bachelors in Music with a K-12 All-Level Teacher Certification. She works as a private viola and violin teacher in the Corpus Christi area, serves in the music ministry of Brighton Park Baptist Church alongside her husband, and is working towards being a registered Suzuki teacher. Torres founded the “Forzet String Quartet” in 2022 with her four dear friends, Julius Gonzalez (violinist), Jonathon Conyers (violinist), and Giovanni Zapata (cellist), to serve the Coastal Bend.</p>
+    <section>
+        <div class="container"> <!-- Added container to each section -->
+            <div class="musician">
+                <img src="Images/Betsabe Cropped.png" alt="Betsabé Torres" width="400" height="250">
+                <div class="musician-content">
+                    <h3>Betsabé Torres</h3>
+                    <p>Cuban-American immigrant Betsabé Torres began her musical journey as a young child serving in the music ministry “Unanimes” at La Trinidad Christian Church in Corpus Christi, Texas, where her father pastored. In middle school, she jumped at the opportunity to take orchestra class to make her grandfather’s dream come true, as he wanted one of his grandchildren to be a violinist. Lacking the financial resources to take private lessons, she was greatly disadvantaged compared to other young violinists in the region. Violin professor Dr. Jose Flores was instrumental in changing Torres’s outcome.  Dr. Flores taught Torres privately for several years and showed her a path to pursue music as a career. During her senior year of high school, Dr. Flores guided her through transitioning to viola to audition for the open spot in the Lichtenstein String Quartet at Texas A&M University-Corpus Christi. At TAMUCC, Torres studied viola under fabulous violist Dr. Melissa Melendez and worked in the Lichtenstein Quartet with coaching from cello professor Dr. Carrie Pierce. While in college, Torres worked with young children as a music teacher at the Blanche Moore Early Childhood Development Center and as a daycare teacher at the Little Sprouts Mother’s Day Out. Teaching young children is where Torres found her passion. Torres will be graduating in the spring of 2024 with her Bachelors in Music with a K-12 All-Level Teacher Certification. She works as a private viola and violin teacher in the Corpus Christi area, serves in the music ministry of Brighton Park Baptist Church alongside her husband, and is working towards being a registered Suzuki teacher. Torres founded the “Forzet String Quartet” in 2022 with her four dear friends, Julius Gonzalez (violinist), Jonathon Conyers (violinist), and Giovanni Zapata (cellist), to serve the Coastal Bend.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="musician">
-            <img src="Images/Gio Cropped.png" alt="Giovanni Zapata">
-            <div class="musician-content">
-                <h3>Giovanni Zapata</h3>
-                <p>Giovanni Zapata, a lifelong resident of Corpus Christi, started his musical journey as a violinist in the sixth grade. After a year of studying violin at the Metro Elementary School of Design, Giovanni began learning cello, inspired by the music of famous cellist Yo-Yo Ma. While in high school, he also picked up the euphonium, trombone, and classical guitar, in addition to seriously pursuing his cello studies. Giovanni placed in the TMEA All-Region Band and All-Region Orchestra ensembles for euphonium and cello, respectively, and earned a placement in the Corpus Christi Area Youth Orchestra on cello. It was through the youth orchestra that he began studying privately with Dr. Carrie Pierce, associate Associate Professor of Music and Cello at Texas A&M University-Corpus Christi. 
-                    Before graduating high school in 2021, Giovanni auditioned for and earned the Lichtenstein String Quartet Scholarship. In recognition of his musical excellence, he was awarded a full-ride scholarship to Texas A&M University-Corpus Christi, where he learned to play chamber music professionally and began his career as a private cello teacher. During his tenure with the Lichtenstein String Quartet, Giovanni would meet lifelong friends Julius, Jonathon, and Betsabé, who would go on to found the Forzet String Quartet. Giovanni is currently working towards building a private cello studio, as he loves seeing progress in people’s playing and musicality. He wishes to continue performing music throughout the Coastal Bend community for years to come. 
-                    </p>
+    <section>
+        <div class="container"> <!-- Added container to each section -->
+            <div class="musician">
+                <img src="Images/Gio Cropped.png" alt="Giovanni Zapata">
+                <div class="musician-content">
+                    <h3>Giovanni Zapata</h3>
+                    <p>Giovanni Zapata, a lifelong resident of Corpus Christi, started his musical journey as a violinist in the sixth grade. After a year of studying violin at the Metro Elementary School of Design, Giovanni began learning cello, inspired by the music of famous cellist Yo-Yo Ma. While in high school, he also picked up the euphonium, trombone, and classical guitar, in addition to seriously pursuing his cello studies. Giovanni placed in the TMEA All-Region Band and All-Region Orchestra ensembles for euphonium and cello, respectively, and earned a placement in the Corpus Christi Area Youth Orchestra on cello. It was through the youth orchestra that he began studying privately with Dr. Carrie Pierce, associate Associate Professor of Music and Cello at Texas A&M University-Corpus Christi. 
+                        Before graduating high school in 2021, Giovanni auditioned for and earned the Lichtenstein String Quartet Scholarship. In recognition of his musical excellence, he was awarded a full-ride scholarship to Texas A&M University-Corpus Christi, where he learned to play chamber music professionally and began his career as a private cello teacher. During his tenure with the Lichtenstein String Quartet, Giovanni would meet lifelong friends Julius, Jonathon, and Betsabé, who would go on to found the Forzet String Quartet. Giovanni is currently working towards building a private cello studio, as he loves seeing progress in people’s playing and musicality. He wishes to continue performing music throughout the Coastal Bend community for years to come. 
+                        </p>
+                </div>
             </div>
         </div>
-
     </section>
 
     <div class="navigation">
-        <a href="#header">Back to Top</a>
+        <!-- Navigation remains unchanged -->
+        <div class="container">
+            <a href="#header">Back to Top</a>
+        </div>
     </div>
 
     <footer>
-        <p class="footer-text">&copy; 2024 Forzet String Quartet. All rights reserved.</p>
-        <img src="Images/Forzet_Logo_Full.jpg" alt="Footer Image" class="footer-image">
+        <div class="container"> <!-- Added container to footer -->
+            <p class="footer-text">&copy; 2024 Forzet String Quartet. All rights reserved.</p>
+            <img src="Images/Forzet_Logo_Full.jpg" alt="Footer Image" class="footer-image">
+        </div>
     </footer>
 </body>
 </html>
