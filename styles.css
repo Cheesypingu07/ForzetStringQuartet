@@ -55,12 +55,13 @@ h1 {
 /* Universal navigation styles */
 nav {
     background-color: #006fc4;
-    padding: 0px 0;
+    padding: 10px 0;
     text-align: center;
     font-size: 14px; /* Added universal font size for navigation */
     margin-bottom: 20px;
     display: flex; /* Use flexbox to layout navigation items */
     justify-content: center; /* Center navigation items horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling */
 }
 
 nav a {
@@ -77,11 +78,16 @@ nav a:hover {
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
+    nav {
+        flex-wrap: nowrap; /* Prevent navigation items from wrapping */
+    }
+
     nav a {
         padding: 8px 16px; /* Adjust padding for smaller screens */
         margin: 5px; /* Adjust margin for smaller screens */
     }
 }
+
 
 
 /* Section styles */
@@ -131,6 +137,9 @@ footer {
 .footer-text {
     margin-bottom: 30px; /* Add space below the text */
 }
+
+
+
 
 
 
