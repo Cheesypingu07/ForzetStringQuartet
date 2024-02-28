@@ -59,7 +59,8 @@ nav {
     text-align: center;
     font-size: 14px; /* Added universal font size for navigation */
     margin-bottom: 20px;
-
+    display: flex; /* Use flexbox to layout navigation items */
+    justify-content: center; /* Center navigation items horizontally */
 }
 
 nav a {
@@ -67,24 +68,26 @@ nav a {
     text-decoration: none;
     padding: 10px;
     margin: 0 5px;
+    flex: 1; /* Distribute available space equally among navigation items */
 }
 
 nav a:hover {
     background-color: #005aaa;
-    }
+}
 
-
-    /* Media query for smaller screens */
+/* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
     nav {
         font-size: 12px; /* Adjust font size for smaller screens */
+        flex-wrap: wrap; /* Allow navigation items to wrap to the next line */
     }
 
     nav a {
         padding: 8px; /* Adjust padding for smaller screens */
-        margin: 0 3px; /* Adjust margin for smaller screens */
+        margin: 5px; /* Adjust margin for smaller screens */
     }
 }
+
 
 /* Section styles */
 section {
@@ -128,6 +131,13 @@ footer {
     height: auto; /* Maintain the aspect ratio */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add a subtle shadow to the image */
 }
+
+.footer-text {
+    margin-bottom: 30px; /* Add space below the text */
+}
+
+
+
 
 .footer-text {
     margin-bottom: 30px; /* Add space below the text */
